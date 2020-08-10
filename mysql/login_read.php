@@ -1,17 +1,7 @@
 <?php
-    echo "Yes it works <br>";
-    $conn = mysqli_connect('localhost', 'nickpsal', 'ospzx3vu!@34', 'login_app');
-    if ($conn) {
-        echo "Connected succefull";
-        echo "<br>";
-    }else {
-        die("Database Connection failed" . mysqli_error());
-    }
-    $query = "SELECT * FROM users";
-    $result = mysqli_query($conn,$query);
-    if (!$result) {
-        die("Query failed " . mysqli_error());
-    }
+    include "db.php";
+    include "functions.php";
+    read_data();
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +17,6 @@
     
     <div class="container">
         <div class="col-sm-6">
-            <?php
-                while($row = mysqli_fetch_row($result)) {
-                    print_r($row);
-                    echo "<br>";
-                }
-            ?>
         </div>
     </div>
 

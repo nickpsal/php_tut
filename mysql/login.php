@@ -1,17 +1,8 @@
 <?php
+    include "db.php";
+    include "functions.php";
     if (isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if ($username && $password) {
-            echo "Yes it works <br>";
-            echo "<br>";
-            $conn = mysqli_connect('localhost', 'nickpsal', 'ospzx3vu!@34', 'login_app');
-            if ($conn) {
-                echo "Connected succefull";
-            }else {
-                die("Database Connection failed");
-            }
-        }
+        login_user();
     }
 ?>
 
