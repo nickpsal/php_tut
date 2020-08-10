@@ -20,6 +20,7 @@
     
     <div class="container">
         <div class="col-sm-6">
+        <H1 class="text-center">LOGIN USER</H1>
             <form action="login.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>

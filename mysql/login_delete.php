@@ -19,6 +19,7 @@
     
     <div class="container">
         <div class="col-sm-6">
+        <H1 class="text-center">DELETE USER</H1>
             <form action="login_delete.php" method="post">
                 <div>ΕΠΙΛΟΓΗ ΧΡΗΣΤΗ ΠΟΥ ΘΕΣ ΝΑ ΔΙΑΓΡΑΨΕΙΣ</div>
                 <div class="form-group">

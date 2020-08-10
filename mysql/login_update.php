@@ -19,6 +19,7 @@
     
     <div class="container">
         <div class="col-sm-6">
+        <H1 class="text-center">USER UPDATE CREDENTIALS</H1>
             <form action="login_update.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>

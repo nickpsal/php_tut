@@ -16,6 +16,7 @@
 <body>
     
     <div class="container">
+    <H1 class="text-center">ALL USERS</H1>
         <div class="col-sm-6">
         </div>
     </div>
