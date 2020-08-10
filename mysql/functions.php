@@ -5,6 +5,8 @@
         global $conn;
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $username = mysqli_real_escape_string($conn,$username);
+        $password = mysqli_real_escape_string($conn,$password);
         if ($username && $password) {
             if ($conn) {
                 echo "Connected succefull";
@@ -44,6 +46,8 @@
         global $conn;
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $username = mysqli_real_escape_string($conn,$username);
+        $password = mysqli_real_escape_string($conn,$password);
         if ($username && $password) {
             if ($conn) {
                 echo "Connected succefull";
@@ -74,6 +78,8 @@
         global $conn;
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $username = mysqli_real_escape_string($conn,$username);
+        $password = mysqli_real_escape_string($conn,$password);
         $id = $_POST['id'];
         $query = "UPDATE users SET username = '$username', password = '$password' WHERE id = '$id'";
         $result = mysqli_query($conn,$query);
