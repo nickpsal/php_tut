@@ -1,18 +1,19 @@
-<?php
+<?php 
     include "db.php";
     include "functions.php";
     if (isset($_POST['submit'])) {
        update_data();
     }
 ?>
-    <?php include "includes/header.php"?>;   
+    <?php include "includes/header.php"?>
+    
     <div class="container">
         <div class="col-sm-6">
         <H1 class="text-center">USER UPDATE CREDENTIALS</H1>
             <form action="login_update.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
-                        <input type="text" name = "username" class="form-control">
+                    <input type="text" name = "username" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
