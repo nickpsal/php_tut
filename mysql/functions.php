@@ -31,11 +31,22 @@
         if (!$result) {
             die("Query failed " . mysqli_error());
         }
+<<<<<<< HEAD
         echo "<H1 class='text-center'>ALL USERS</H1>";
         while($row = mysqli_fetch_assoc($result)) {
             echo "<pre>";
             print_r($row);
             echo "</pre>";
+=======
+        while($row = mysqli_fetch_assoc($result)) {
+            ?> 
+            <pre>
+            <?php
+            print_r($row);
+            ?>
+            </pre>
+            <?php
+>>>>>>> 89501b9b875ab763ac672712a03cce2cd0b45cd6
         }
     }
 
