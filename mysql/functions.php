@@ -66,8 +66,8 @@
         }
 
         while($row=mysqli_fetch_assoc($result)) {
-            $id = $row['id'];
-            echo "<option value='$id'>$id</option>";
+            $prev_username = $row['username'];
+            echo "<option value='$prev_username'>$prev_username</option>";
         }
     }
 
@@ -77,8 +77,8 @@
         $password = $_POST['password'];
         $username = mysqli_real_escape_string($conn,$username);
         $password = mysqli_real_escape_string($conn,$password);
-        $id = $_POST['id'];
-        $query = "UPDATE users SET username = '$username', password = '$password' WHERE id = '$id'";
+        $prev_username = $_POST['old_username'];
+        $query = "UPDATE users SET username = '$username', password = '$password' WHERE username = '$prev_username'";
         $result = mysqli_query($conn,$query);
         if (!$result) {
             die("Query failed " . mysqli_error($conn));

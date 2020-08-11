@@ -20,7 +20,7 @@
                 </div>
                 <div>ΕΠΙΛΟΓΗ ΧΡΗΣΤΗ ΠΟΥ ΘΕΣ ΝΑ ΑΛΛΑΞΕΙΣ ΟΝΟΜΑ ΧΡΗΣΤΗ ΚΑΙ ΚΩΔΙΚΟ</div>
                 <div class="form-group">
-                    <select name="id" id="">
+                    <select name="old_username" id="">
                     <?php
                         show_all_data();
                     ?>
