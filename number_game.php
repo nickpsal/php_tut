@@ -1,26 +1,33 @@
 <?php
-    $computer_number = mt_srand(1,100);
-    if (isset($_POST['submit'])) {
-        if ($_POST['number'] != "" ) {
-            $player_number = $_POST['number'];
-            echo $computer_number;
-            echo "<br>";
-            echo $player_number;
-        }
+    //$num_to_guess = 42;
+    $min = 1;
+    $max = 1000;
+	$randomvalue = mt_rand($min,$max);
+	echo $randomvalue;
+    $attemp = 0;
+    if (!isset($_POST["guess"])) {
+        $message = "Welcome to the guessing machine!";
+    } else if ($_POST["guess"] > $randomvalue){
+        $message = $_POST["guess"]." is too big! Try a smaller number.";
+            ++$attemp;
+    } else if ($_POST["guess"] < $randomvalue) {
+        $message = $_POST["guess"]." is too small! Try a larger number.";
+        $attemp++;
+    } else { // must be equivalent
+        $message = "You guessed the right number in" . $attemp . "attemps.";
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>A PHP number guessing script</title>
 </head>
 <body>
-    <form action="number_game.php" method="post">
-        <input type="text" name = "number" placeholder = "Enter Username"><br>
-        <input type="submit" name="submit"><br>
-    </form>
+<h1><?php echo $message; ?></h1>
+<form action="number_game.php" method="POST">
+<p><strong>Type your guess here:</strong>
+<input type="text" type="hidden" name="randonvalue"></p>
+<p><input type="submit" value="submit your guess"/></p>
+</form>
 </body>
 </html>

@@ -2,29 +2,33 @@
     include "db.php";
     include "functions.php";
     if (isset($_POST['submit'])) {
-        login_user();
+       update_data();
     }
 ?>
-
-    <?php include "includes/header.php"?>
-    
+    <?php include "includes/header.php"?>;   
     <div class="container">
         <div class="col-sm-6">
-        <H1 class="text-center">LOGIN USER</H1>
-            <form action="login.php" method="post">
+        <H1 class="text-center">USER UPDATE CREDENTIALS</H1>
+            <form action="login_update.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name = "username" class="form-control">
+                        <input type="text" name = "username" class="form-control">
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" name = "password" class="form-control">
+                </div>
+                <div>ΕΠΙΛΟΓΗ ΧΡΗΣΤΗ ΠΟΥ ΘΕΣ ΝΑ ΑΛΛΑΞΕΙΣ ΟΝΟΜΑ ΧΡΗΣΤΗ ΚΑΙ ΚΩΔΙΚΟ</div>
+                <div class="form-group">
+                    <select name="id" id="">
+                    <?php
+                        show_all_data();
+                    ?>
+                    </select>
                 </div>
                 <input class="btn btn-primary" type="submit" name="submit" value="Submit">
             </form>
         </div>
     </div>
-
 </body>
 </html>
