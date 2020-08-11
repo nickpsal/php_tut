@@ -5,7 +5,8 @@
        update_data();
     }
 ?>
-    <?php include "includes/header.php"?>;   
+    <?php include "includes/header.php"?>
+    
     <div class="container">
         <div class="col-sm-6">
         <H1 class="text-center">USER UPDATE CREDENTIALS</H1>
