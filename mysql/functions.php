@@ -7,16 +7,16 @@
         $password = $_POST['password'];
         $username = mysqli_real_escape_string($conn,$username);
         $password = mysqli_real_escape_string($conn,$password);
-        $hashFormat = "$2y$10$";
-        $salt = "iusesomecrazystring22";
-        $hash_and_salt = $hashFormat . $salt;
-        $password = crypt($password, $hash_and_salt);
+        
+        $hashed_Password = password_hash($password, PASSWORD_DEFAULT);
+        
+        
         if ($username && $password) {
             if (!$conn) {
                 die("Database Connection failed" . mysqli_error($conn));
             }
         }
-        $query = "INSERT INTO users(username,password) VALUES ('$username','$password')";
+        $query = "INSERT INTO users(username,password) VALUES ('$username','$hashed_Password')";
         $result = mysqli_query($conn,$query);
         if (!$result) {
             die("Query failed " . mysqli_error($conn));
@@ -52,6 +52,9 @@
                 die("Database Connection failed" . mysqli_error($conn));
             }
         }
+        echo $username;
+        echo "<br>";
+        echo $password;
     }
 
     function show_all_data() {
